@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Page — Anonymous Submission</title>
+  <title>SAFER-Nav: Enhancing Safety for Visual Robot Navigation via Segmentation-Aware Fine-Tuning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -264,8 +264,7 @@
   <!-- ====== HERO ====== -->
   <header class="hero">
     <span class="badge">Conference Name 2026</span>
-    <!-- TODO: 논문 제목으로 수정 -->
-    <h1>Your Paper Title Goes Here: A Method for Something Amazing</h1>
+    <h1>SAFER-Nav: Enhancing Safety for Visual Robot Navigation via Segmentation-Aware Fine-Tuning</h1>
     <p class="authors">Anonymous Authors</p>
     <p class="venue">Under review</p>
     <div class="links">
@@ -279,9 +278,7 @@
   <section class="narrow">
     <h2>Abstract</h2>
     <p class="abstract-text">
-      <!-- TODO: 여기에 논문 초록을 붙여넣으세요 -->
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Recently, vision-based navigation models, particularly foundation models, have demonstrated promising performance by generating viable trajectories from RGB observations alone. However, even state-of-the-art (SOTA) transformer- and diffusion-based policies struggle to generalize in unfamiliar deployment environments containing unseen obstacles or shifted conditions. As a result, generated trajectories often remain goal-directed but unsafe. Existing efforts improve safety through external trajectory correction or internal geometric priors, yet the resulting policies are not trained to explicitly represent obstacle boundaries or traversable free-space structure. To address this limitation, we propose <strong>SAFER-Nav</strong> (<u>S</u>egmentation-<u>A</u>ware <u>F</u>ine-tuning for <u>E</u>nhancing Safety of <u>R</u>obot <u>Nav</u>igation), a segmentation-aware navigation model that incorporates obstacle and free-space structure directly into the policy via fine-tuning and is designed to be compatible with diverse RGB-based navigation backbones. We evaluate SAFER-Nav against SOTA models, including ViNT, NoMaD, and their CARE-augmented variants, across multiple robot platforms, diverse indoor environments, and static and dynamic obstacle scenarios, demonstrating that SAFER-Nav reduces collision frequency while maintaining goal-reaching performance.
     </p>
   </section>
 
@@ -293,17 +290,11 @@
     <h3>Scenario 1: Dynamic Obstacle — Crossing</h3>
     <span class="scenario-label">dynamic_obs_cross</span>
     <div class="video-grid">
-      <div class="video-card">
+      <div class="video-card ours">
         <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_nomad.MOV" type="video/mp4" />
+          <source src="videos/dynamic_obs_cross_safernav.MOV" type="video/mp4" />
         </video>
-        <div class="label">NoMaD</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_nomad_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD + CARE</div>
+        <div class="label">SAFER-Nav (Ours)</div>
       </div>
       <div class="video-card">
         <video controls preload="metadata" muted>
@@ -313,15 +304,21 @@
       </div>
       <div class="video-card">
         <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_nomad.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
           <source src="videos/dynamic_obs_cross_vint_care.MOV" type="video/mp4" />
         </video>
         <div class="label">ViNT + CARE</div>
       </div>
-      <div class="video-card ours">
+      <div class="video-card">
         <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_safernav.MOV" type="video/mp4" />
+          <source src="videos/dynamic_obs_cross_nomad_care.MOV" type="video/mp4" />
         </video>
-        <div class="label">SaferNav (Ours)</div>
+        <div class="label">NoMaD + CARE</div>
       </div>
     </div>
 
@@ -329,17 +326,11 @@
     <h3>Scenario 2: Dynamic Obstacle — Front</h3>
     <span class="scenario-label">dynamic_obs_front</span>
     <div class="video-grid">
-      <div class="video-card">
+      <div class="video-card ours">
         <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_nomad.MOV" type="video/mp4" />
+          <source src="videos/dynamic_obs_front_safernav.MOV" type="video/mp4" />
         </video>
-        <div class="label">NoMaD</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD + CARE</div>
+        <div class="label">SAFER-Nav (Ours)</div>
       </div>
       <div class="video-card">
         <video controls preload="metadata" muted>
@@ -349,19 +340,25 @@
       </div>
       <div class="video-card">
         <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_nomad.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
           <source src="videos/dynamic_obs_front_vint_care.MOV" type="video/mp4" />
         </video>
         <div class="label">ViNT + CARE</div>
       </div>
-      <div class="video-card ours">
+      <div class="video-card">
         <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_safernav.MOV" type="video/mp4" />
+          <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
         </video>
-        <div class="label">SaferNav (Ours)</div>
+        <div class="label">NoMaD + CARE</div>
       </div>
     </div>
 
-    <!-- TODO: 추가 시나리오가 있으면 위 패턴을 복사해서 추가하세요 -->
+    <!-- TODO: 추가 시나리오(static_env 등)가 있으면 위 패턴을 복사해서 추가하세요 -->
 
   </section>
 
@@ -398,48 +395,48 @@
           <tr>
             <!-- TODO: 메트릭 이름을 수정하세요 -->
             <th>Method</th>
-            <th>PSNR ↑</th>
-            <th>SSIM ↑</th>
-            <th>LPIPS ↓</th>
-            <th>FPS ↑</th>
+            <th>Metric 1 ↑</th>
+            <th>Metric 2 ↑</th>
+            <th>Collision Rate ↓</th>
+            <th>Goal Reach ↑</th>
           </tr>
         </thead>
         <tbody>
           <!-- TODO: 실제 수치로 교체하세요 -->
           <tr>
-            <td>NoMaD</td>
-            <td>28.34</td>
-            <td>0.912</td>
-            <td>0.087</td>
-            <td>12</td>
-          </tr>
-          <tr>
-            <td>NoMaD + CARE</td>
-            <td>29.17</td>
-            <td>0.923</td>
-            <td>0.072</td>
-            <td>8</td>
-          </tr>
-          <tr>
             <td>ViNT</td>
-            <td>29.85</td>
-            <td>0.928</td>
-            <td>0.068</td>
-            <td>10</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>NoMaD</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
           </tr>
           <tr>
             <td>ViNT + CARE</td>
-            <td>30.02</td>
-            <td>0.931</td>
-            <td>0.065</td>
-            <td>9</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>NoMaD + CARE</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
           </tr>
           <tr class="highlight-row">
-            <td>SaferNav (Ours)</td>
-            <td class="best">31.45</td>
-            <td class="best">0.948</td>
-            <td class="best">0.041</td>
-            <td class="best">30</td>
+            <td>SAFER-Nav (Ours)</td>
+            <td class="best">—</td>
+            <td class="best">—</td>
+            <td class="best">—</td>
+            <td class="best">—</td>
           </tr>
         </tbody>
       </table>
