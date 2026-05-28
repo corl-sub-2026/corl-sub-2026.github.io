@@ -37,7 +37,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Header ── */
     .hero {
       text-align: center;
       padding: 5rem 1.5rem 3rem;
@@ -64,194 +63,121 @@
       margin-bottom: 1.2rem;
       letter-spacing: -0.01em;
     }
-    .hero .authors {
-      color: var(--c-muted);
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-    .hero .venue {
-      color: var(--c-muted);
-      font-size: 0.9rem;
-    }
+    .hero .authors { color: var(--c-muted); font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .hero .venue { color: var(--c-muted); font-size: 0.9rem; }
     .hero .links {
       margin-top: 1.8rem;
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
     }
     .hero .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55em 1.3em;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55em 1.3em; border-radius: 8px; font-size: 0.9rem;
+      font-weight: 500; text-decoration: none; transition: all 0.2s;
     }
     .btn-primary { background: var(--c-accent); color: #fff; }
     .btn-primary:hover { background: #1d4ed8; }
     .btn-outline { border: 1.5px solid var(--c-border); color: var(--c-text); background: var(--c-surface); }
     .btn-outline:hover { border-color: var(--c-accent); color: var(--c-accent); }
 
-    /* ── Sections ── */
     section {
       max-width: var(--max-w);
       margin: 0 auto var(--gap);
       padding: 0 1.5rem;
     }
-    section.narrow {
-      max-width: var(--max-w-narrow);
-    }
+    section.narrow { max-width: var(--max-w-narrow); }
     section h2 {
       font-family: var(--font-serif);
-      font-size: 1.55rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
+      font-size: 1.55rem; font-weight: 600;
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
       border-bottom: 2px solid var(--c-accent-soft);
     }
     section h3 {
       font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.8rem;
-      color: #374151;
+      font-size: 1.2rem; font-weight: 600;
+      margin: 2rem 0 0.6rem; color: #374151;
     }
 
-    /* ── Abstract ── */
     .abstract-text {
       font-family: var(--font-serif);
-      font-size: 1.05rem;
-      color: #374151;
-      line-height: 1.85;
+      font-size: 1.05rem; color: #374151; line-height: 1.85;
     }
 
-    /* ── Video Comparison Grid ── */
+    /* ── Scenario Tabs ── */
+    .scenario-group { margin-bottom: 2.5rem; }
     .scenario-label {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--c-accent);
-      background: var(--c-tag-bg);
-      padding: 0.3em 0.8em;
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--c-accent); background: var(--c-tag-bg);
+      padding: 0.3em 0.8em; border-radius: 6px; margin-bottom: 0.8rem;
     }
+    .scenario-desc {
+      font-size: 0.9rem; color: var(--c-muted); margin-bottom: 0.8rem;
+    }
+
+    /* ── Video Grid ── */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.8rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.7rem;
       margin-top: 0.5rem;
-      margin-bottom: 2rem;
     }
     .video-card {
       background: var(--c-surface);
       border: 1.5px solid var(--c-border);
-      border-radius: 10px;
-      overflow: hidden;
+      border-radius: 10px; overflow: hidden;
       transition: box-shadow 0.2s;
     }
-    .video-card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    }
+    .video-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
     .video-card.ours {
       border-color: var(--c-ours-border);
       background: var(--c-ours);
     }
     .video-card video {
-      width: 100%;
-      display: block;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      background: #111;
+      width: 100%; display: block;
+      aspect-ratio: 16/9; object-fit: cover; background: #111;
     }
     .video-card .label {
-      padding: 0.55rem 0.75rem;
-      font-size: 0.82rem;
-      font-weight: 500;
-      text-align: center;
+      padding: 0.5rem 0.6rem; font-size: 0.78rem;
+      font-weight: 500; text-align: center;
     }
-    .video-card.ours .label {
-      font-weight: 700;
-      color: #166534;
-    }
+    .video-card.ours .label { font-weight: 700; color: #166534; }
 
     /* ── Results Gallery ── */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 1rem; margin-top: 1rem;
     }
     .gallery figure {
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
+      background: var(--c-surface); border: 1px solid var(--c-border);
+      border-radius: 10px; overflow: hidden; transition: box-shadow 0.2s;
     }
-    .gallery figure:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    }
+    .gallery figure:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
     .gallery img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      background: #f3f4f6;
+      width: 100%; display: block; aspect-ratio: 4/3;
+      object-fit: cover; background: #f3f4f6;
     }
-    .gallery figcaption {
-      padding: 0.7rem 0.9rem;
-      font-size: 0.85rem;
-      color: var(--c-muted);
-    }
+    .gallery figcaption { padding: 0.7rem 0.9rem; font-size: 0.85rem; color: var(--c-muted); }
 
-    /* ── Comparison Table ── */
+    /* ── Table ── */
     .table-wrap {
-      overflow-x: auto;
-      margin-top: 1rem;
-      border-radius: 10px;
-      border: 1px solid var(--c-border);
+      overflow-x: auto; margin-top: 1rem;
+      border-radius: 10px; border: 1px solid var(--c-border);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
     thead { background: #f8fafc; }
-    th, td {
-      padding: 0.75rem 1rem;
-      text-align: center;
-      border-bottom: 1px solid var(--c-border);
-    }
-    th {
-      font-weight: 600;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--c-muted);
-    }
-    td:first-child, th:first-child {
-      text-align: left;
-      font-weight: 500;
-    }
+    th, td { padding: 0.75rem 1rem; text-align: center; border-bottom: 1px solid var(--c-border); }
+    th { font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-muted); }
+    td:first-child, th:first-child { text-align: left; font-weight: 500; }
     tbody tr:hover { background: #f0f4ff; }
     .highlight-row { background: var(--c-ours); font-weight: 600; }
     .best { color: var(--c-accent); font-weight: 700; }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      font-size: 0.8rem;
-      color: var(--c-muted);
-    }
+    footer { text-align: center; padding: 3rem 1rem 2rem; font-size: 0.8rem; color: var(--c-muted); }
 
+    @media (max-width: 900px) {
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 600px) {
       .hero { padding: 3rem 1rem 2rem; }
       section { padding: 0 1rem; }
@@ -286,79 +212,200 @@
   <section id="videos">
     <h2>Video Comparisons</h2>
 
-    <!-- Scenario 1: Dynamic Obstacle — Crossing -->
-    <h3>Scenario 1: Dynamic Obstacle — Crossing</h3>
-    <span class="scenario-label">dynamic_obs_cross</span>
-    <div class="video-grid">
-      <div class="video-card ours">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_safernav.MOV" type="video/mp4" />
-        </video>
-        <div class="label">SAFER-Nav (Ours)</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_vint.MOV" type="video/mp4" />
-        </video>
-        <div class="label">ViNT</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_nomad.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_vint_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">ViNT + CARE</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_cross_nomad_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD + CARE</div>
-      </div>
-    </div>
-
-    <!-- Scenario 2: Dynamic Obstacle — Front -->
-    <h3>Scenario 2: Dynamic Obstacle — Front</h3>
-    <span class="scenario-label">dynamic_obs_front</span>
-    <div class="video-grid">
-      <div class="video-card ours">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_safernav.MOV" type="video/mp4" />
-        </video>
-        <div class="label">SAFER-Nav (Ours)</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_vint.MOV" type="video/mp4" />
-        </video>
-        <div class="label">ViNT</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_nomad.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_vint_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">ViNT + CARE</div>
-      </div>
-      <div class="video-card">
-        <video controls preload="metadata" muted>
-          <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
-        </video>
-        <div class="label">NoMaD + CARE</div>
+    <!-- ── Dynamic Obstacle Environment: Corner-Appear ── -->
+    <div class="scenario-group">
+      <h3>Dynamic Obstacle Environment — Corner-Appear</h3>
+      <span class="scenario-label">Dynamic Obstacle Environment</span>
+      <p class="scenario-desc">A dynamic obstacle appears from a corner along the robot's planned path.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_cross_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_cross_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_cross_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_cross_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_cross_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
       </div>
     </div>
 
-    <!-- TODO: 추가 시나리오(static_env 등)가 있으면 위 패턴을 복사해서 추가하세요 -->
+    <!-- ── Dynamic Obstacle Environment: Front-Approach ── -->
+    <div class="scenario-group">
+      <h3>Dynamic Obstacle Environment — Front-Approach</h3>
+      <span class="scenario-label">Dynamic Obstacle Environment</span>
+      <p class="scenario-desc">A dynamic obstacle approaches head-on toward the robot.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_front_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_front_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_front_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_front_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Static Obstacle Environment: Locobot ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — Locobot</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the Locobot platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Static Obstacle Environment: Robomaster ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — Robomaster</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the Robomaster platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Static Obstacle Environment: Turtlebot ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — Turtlebot</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the Turtlebot platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -402,48 +449,31 @@
           </tr>
         </thead>
         <tbody>
-          <!-- TODO: 실제 수치로 교체하세요 -->
           <tr>
             <td>ViNT</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
           <tr>
             <td>NoMaD</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
           <tr>
             <td>ViNT + CARE</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
           <tr>
             <td>NoMaD + CARE</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
           </tr>
           <tr class="highlight-row">
             <td>SAFER-Nav (Ours)</td>
-            <td class="best">—</td>
-            <td class="best">—</td>
-            <td class="best">—</td>
-            <td class="best">—</td>
+            <td class="best">—</td><td class="best">—</td><td class="best">—</td><td class="best">—</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- ====== FOOTER ====== -->
   <footer>
     <p>Anonymous Submission — Under Double-Blind Review</p>
   </footer>
