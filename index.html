@@ -6,7 +6,7 @@
   <title>SAFER-Nav: Enhancing Safety for Visual Robot Navigation via Segmentation-Aware Fine-Tuning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -21,8 +21,9 @@
       --c-tag-bg: #f0f4ff;
       --c-ours: #dcfce7;
       --c-ours-border: #86efac;
-      --font-serif: 'Source Serif 4', 'Georgia', serif;
-      --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --font-serif: 'Castoro', 'Georgia', serif;
+      --font-sans: 'Noto Sans', 'Helvetica Neue', sans-serif;
+      --font-title: 'Google Sans', 'Helvetica Neue', sans-serif;
       --max-w: 1100px;
       --max-w-narrow: 860px;
       --gap: 2.5rem;
@@ -56,7 +57,7 @@
       margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: clamp(1.75rem, 4vw, 2.6rem);
       font-weight: 700;
       line-height: 1.25;
@@ -86,19 +87,19 @@
     }
     section.narrow { max-width: var(--max-w-narrow); }
     section h2 {
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: 1.55rem; font-weight: 600;
       margin-bottom: 1rem; padding-bottom: 0.5rem;
       border-bottom: 2px solid var(--c-accent-soft);
     }
     section h3 {
-      font-family: var(--font-serif);
+      font-family: var(--font-title);
       font-size: 1.2rem; font-weight: 600;
       margin: 2rem 0 0.6rem; color: #374151;
     }
 
     .abstract-text {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 1.05rem; color: #374151; line-height: 1.85;
     }
 
@@ -234,7 +235,7 @@
     <p class="venue">Under review</p>
     <div class="links">
       <a href="#" class="btn-primary">📄 Paper (PDF)</a>
-      <a href="#" class="btn-outline">💻 Code (Coming Soon)</a>
+      <a href="#" onclick="alert('Coming soon!'); return false;" class="btn-outline">💻 Code (Coming Soon)</a>
       <a href="#videos" class="btn-outline">🎬 Videos</a>
     </div>
   </header>
@@ -446,30 +447,6 @@
       </div>
     </div>
 
-  </section>
-
-  <!-- ====== RESULTS (Figures - TODO) ====== -->
-  <section>
-    <h2>Qualitative Results</h2>
-    <div class="gallery">
-      <!-- TODO: assets/ 폴더에 결과 이미지를 넣고 경로를 수정하세요 -->
-      <figure>
-        <img src="assets/result1.png" alt="Result 1" />
-        <figcaption>Figure 1 — (To be updated)</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/result2.png" alt="Result 2" />
-        <figcaption>Figure 2 — (To be updated)</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/result3.png" alt="Result 3" />
-        <figcaption>Figure 3 — (To be updated)</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/result4.png" alt="Result 4" />
-        <figcaption>Figure 4 — (To be updated)</figcaption>
-      </figure>
-    </div>
   </section>
 
   <!-- ====== STATIC OBSTACLE TABLE ====== -->
@@ -722,7 +699,7 @@
 
       // Title
       ctx.fillStyle = '#1a1a1a';
-      ctx.font = '600 13px DM Sans, sans-serif';
+      ctx.font = '600 13px Noto Sans, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(ds.title, ox + cellW / 2, oy + 18);
 
@@ -732,13 +709,13 @@
       for (let y = 0; y <= 100; y += 20) {
         const py = plotB - (y / 100) * ph;
         ctx.beginPath(); ctx.moveTo(plotL, py); ctx.lineTo(plotR, py); ctx.stroke();
-        ctx.fillStyle = '#9ca3af'; ctx.font = '11px DM Sans'; ctx.textAlign = 'right';
+        ctx.fillStyle = '#9ca3af'; ctx.font = '11px Noto Sans'; ctx.textAlign = 'right';
         ctx.fillText(y, plotL - 6, py + 4);
       }
       for (let x = 0; x <= 8; x += 2) {
         const px = plotL + (x / 8.2) * pw;
         ctx.beginPath(); ctx.moveTo(px, plotT); ctx.lineTo(px, plotB); ctx.stroke();
-        ctx.fillStyle = '#9ca3af'; ctx.font = '11px DM Sans'; ctx.textAlign = 'center';
+        ctx.fillStyle = '#9ca3af'; ctx.font = '11px Noto Sans'; ctx.textAlign = 'center';
         ctx.fillText(x, px, plotB + 14);
       }
 
@@ -747,7 +724,7 @@
       ctx.strokeRect(plotL, plotT, pw, ph);
 
       // Labels
-      ctx.fillStyle = '#6b7280'; ctx.font = '11px DM Sans'; ctx.textAlign = 'center';
+      ctx.fillStyle = '#6b7280'; ctx.font = '11px Noto Sans'; ctx.textAlign = 'center';
       ctx.fillText('Avg. collisions/run', ox + cellW / 2, plotB + 32);
       ctx.save();
       ctx.translate(ox + 12, oy + cellH / 2);
