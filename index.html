@@ -134,7 +134,7 @@
     }
     .video-card video {
       width: 100%; display: block;
-      aspect-ratio: 16/9; object-fit: cover; background: #111;
+      object-fit: contain; background: #111;
     }
     .video-card .label {
       padding: 0.5rem 0.6rem; font-size: 0.78rem;
@@ -212,6 +212,123 @@
   <section id="videos">
     <h2>Video Comparisons</h2>
 
+    <!-- ── Static Obstacle Environment: LoCoBot ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — LoCoBot</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the LoCoBot platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_locobot_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Static Obstacle Environment: RoboMaster ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — RoboMaster</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the RoboMaster platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_robomaster_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Static Obstacle Environment: TurtleBot4 ── -->
+    <div class="scenario-group">
+      <h3>Static Obstacle Environment — TurtleBot4</h3>
+      <span class="scenario-label">Static Obstacle Environment</span>
+      <p class="scenario-desc">Static obstacles evaluated on the TurtleBot4 platform.</p>
+      <div class="video-grid">
+        <div class="video-card ours">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_safernav.MOV" type="video/mp4" />
+          </video>
+          <div class="label">SAFER-Nav (Ours)</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_vint.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_nomad.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_vint_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">ViNT + CARE</div>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/static_obs_TE_turtlebot_nomad_care.MOV" type="video/mp4" />
+          </video>
+          <div class="label">NoMaD + CARE</div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Dynamic Obstacle Environment: Corner-Appear ── -->
     <div class="scenario-group">
       <h3>Dynamic Obstacle Environment — Corner-Appear</h3>
@@ -284,123 +401,6 @@
         <div class="video-card">
           <video controls preload="metadata" muted>
             <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD + CARE</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Static Obstacle Environment: Locobot ── -->
-    <div class="scenario-group">
-      <h3>Static Obstacle Environment — Locobot</h3>
-      <span class="scenario-label">Static Obstacle Environment</span>
-      <p class="scenario-desc">Static obstacles evaluated on the Locobot platform.</p>
-      <div class="video-grid">
-        <div class="video-card ours">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_locobot_safernav.MOV" type="video/mp4" />
-          </video>
-          <div class="label">SAFER-Nav (Ours)</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_locobot_vint.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_locobot_nomad.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_locobot_vint_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT + CARE</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_locobot_nomad_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD + CARE</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Static Obstacle Environment: Robomaster ── -->
-    <div class="scenario-group">
-      <h3>Static Obstacle Environment — Robomaster</h3>
-      <span class="scenario-label">Static Obstacle Environment</span>
-      <p class="scenario-desc">Static obstacles evaluated on the Robomaster platform.</p>
-      <div class="video-grid">
-        <div class="video-card ours">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_robomaster_safernav.MOV" type="video/mp4" />
-          </video>
-          <div class="label">SAFER-Nav (Ours)</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_robomaster_vint.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_robomaster_nomad.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_robomaster_vint_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT + CARE</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_robomaster_nomad_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD + CARE</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Static Obstacle Environment: Turtlebot ── -->
-    <div class="scenario-group">
-      <h3>Static Obstacle Environment — Turtlebot</h3>
-      <span class="scenario-label">Static Obstacle Environment</span>
-      <p class="scenario-desc">Static obstacles evaluated on the Turtlebot platform.</p>
-      <div class="video-grid">
-        <div class="video-card ours">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_turtlebot_safernav.MOV" type="video/mp4" />
-          </video>
-          <div class="label">SAFER-Nav (Ours)</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_turtlebot_vint.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_turtlebot_nomad.MOV" type="video/mp4" />
-          </video>
-          <div class="label">NoMaD</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_turtlebot_vint_care.MOV" type="video/mp4" />
-          </video>
-          <div class="label">ViNT + CARE</div>
-        </div>
-        <div class="video-card">
-          <video controls preload="metadata" muted>
-            <source src="videos/static_obs_TE_turtlebot_nomad_care.MOV" type="video/mp4" />
           </video>
           <div class="label">NoMaD + CARE</div>
         </div>
