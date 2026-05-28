@@ -19,10 +19,13 @@
       --c-accent-soft: #dbeafe;
       --c-border: #e5e7eb;
       --c-tag-bg: #f0f4ff;
+      --c-ours: #dcfce7;
+      --c-ours-border: #86efac;
       --font-serif: 'Source Serif 4', 'Georgia', serif;
       --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
-      --max-w: 860px;
-      --gap: 2rem;
+      --max-w: 1100px;
+      --max-w-narrow: 860px;
+      --gap: 2.5rem;
     }
 
     body {
@@ -38,7 +41,7 @@
     .hero {
       text-align: center;
       padding: 5rem 1.5rem 3rem;
-      max-width: var(--max-w);
+      max-width: var(--max-w-narrow);
       margin: 0 auto;
     }
     .hero .badge {
@@ -99,6 +102,9 @@
       margin: 0 auto var(--gap);
       padding: 0 1.5rem;
     }
+    section.narrow {
+      max-width: var(--max-w-narrow);
+    }
     section h2 {
       font-family: var(--font-serif);
       font-size: 1.55rem;
@@ -106,6 +112,13 @@
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid var(--c-accent-soft);
+    }
+    section h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.8rem;
+      color: #374151;
     }
 
     /* ── Abstract ── */
@@ -116,23 +129,56 @@
       line-height: 1.85;
     }
 
-    /* ── Video ── */
-    .video-wrap {
-      margin-top: 1rem;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    /* ── Video Comparison Grid ── */
+    .scenario-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      background: var(--c-tag-bg);
+      padding: 0.3em 0.8em;
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
     }
-    .video-wrap video {
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .video-card {
+      background: var(--c-surface);
+      border: 1.5px solid var(--c-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .video-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .video-card.ours {
+      border-color: var(--c-ours-border);
+      background: var(--c-ours);
+    }
+    .video-card video {
       width: 100%;
       display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #111;
     }
-    .video-caption {
+    .video-card .label {
+      padding: 0.55rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 500;
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--c-muted);
-      margin-top: 0.6rem;
+    }
+    .video-card.ours .label {
+      font-weight: 700;
+      color: #166534;
     }
 
     /* ── Results Gallery ── */
@@ -177,9 +223,7 @@
       border-collapse: collapse;
       font-size: 0.92rem;
     }
-    thead {
-      background: #f8fafc;
-    }
+    thead { background: #f8fafc; }
     th, td {
       padding: 0.75rem 1rem;
       text-align: center;
@@ -196,17 +240,9 @@
       text-align: left;
       font-weight: 500;
     }
-    tbody tr:hover {
-      background: #f0f4ff;
-    }
-    .highlight-row {
-      background: var(--c-accent-soft);
-      font-weight: 600;
-    }
-    .best {
-      color: var(--c-accent);
-      font-weight: 700;
-    }
+    tbody tr:hover { background: #f0f4ff; }
+    .highlight-row { background: var(--c-ours); font-weight: 600; }
+    .best { color: var(--c-accent); font-weight: 700; }
 
     /* ── Footer ── */
     footer {
@@ -216,10 +252,10 @@
       color: var(--c-muted);
     }
 
-    /* ── Responsive ── */
     @media (max-width: 600px) {
       .hero { padding: 3rem 1rem 2rem; }
       section { padding: 0 1rem; }
+      .video-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -228,44 +264,105 @@
   <!-- ====== HERO ====== -->
   <header class="hero">
     <span class="badge">Conference Name 2026</span>
-
-    <!-- TODO: 논문 제목으로 수정하세요 -->
+    <!-- TODO: 논문 제목으로 수정 -->
     <h1>Your Paper Title Goes Here: A Method for Something Amazing</h1>
-
     <p class="authors">Anonymous Authors</p>
     <p class="venue">Under review</p>
-
     <div class="links">
-      <!-- 필요 시 링크 수정/추가 -->
       <a href="#" class="btn-primary">📄 Paper (PDF)</a>
       <a href="#" class="btn-outline">💻 Code (Coming Soon)</a>
-      <a href="#video" class="btn-outline">🎬 Video</a>
+      <a href="#videos" class="btn-outline">🎬 Videos</a>
     </div>
   </header>
 
   <!-- ====== ABSTRACT ====== -->
-  <section>
+  <section class="narrow">
     <h2>Abstract</h2>
     <p class="abstract-text">
       <!-- TODO: 여기에 논문 초록을 붙여넣으세요 -->
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </section>
 
-  <!-- ====== VIDEO ====== -->
-  <section id="video">
-    <h2>Demo Video</h2>
-    <div class="video-wrap">
-      <!-- TODO: videos/demo.mp4 파일을 리포에 업로드한 뒤 경로를 맞춰주세요 -->
-      <video controls preload="metadata" poster="assets/video-poster.jpg">
-        <source src="videos/demo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  <!-- ====== VIDEO COMPARISONS ====== -->
+  <section id="videos">
+    <h2>Video Comparisons</h2>
+
+    <!-- Scenario 1: Dynamic Obstacle — Crossing -->
+    <h3>Scenario 1: Dynamic Obstacle — Crossing</h3>
+    <span class="scenario-label">dynamic_obs_cross</span>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_nomad.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_nomad_care.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD + CARE</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_vint.MOV" type="video/mp4" />
+        </video>
+        <div class="label">ViNT</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_vint_care.MOV" type="video/mp4" />
+        </video>
+        <div class="label">ViNT + CARE</div>
+      </div>
+      <div class="video-card ours">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_cross_safernav.MOV" type="video/mp4" />
+        </video>
+        <div class="label">SaferNav (Ours)</div>
+      </div>
     </div>
-    <p class="video-caption">Overview of the proposed method and qualitative results.</p>
+
+    <!-- Scenario 2: Dynamic Obstacle — Front -->
+    <h3>Scenario 2: Dynamic Obstacle — Front</h3>
+    <span class="scenario-label">dynamic_obs_front</span>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_nomad.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_nomad_care.MOV" type="video/mp4" />
+        </video>
+        <div class="label">NoMaD + CARE</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_vint.MOV" type="video/mp4" />
+        </video>
+        <div class="label">ViNT</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_vint_care.MOV" type="video/mp4" />
+        </video>
+        <div class="label">ViNT + CARE</div>
+      </div>
+      <div class="video-card ours">
+        <video controls preload="metadata" muted>
+          <source src="videos/dynamic_obs_front_safernav.MOV" type="video/mp4" />
+        </video>
+        <div class="label">SaferNav (Ours)</div>
+      </div>
+    </div>
+
+    <!-- TODO: 추가 시나리오가 있으면 위 패턴을 복사해서 추가하세요 -->
+
   </section>
 
   <!-- ====== RESULTS ====== -->
@@ -293,7 +390,7 @@
   </section>
 
   <!-- ====== COMPARISON TABLE ====== -->
-  <section>
+  <section class="narrow">
     <h2>Quantitative Comparison</h2>
     <div class="table-wrap">
       <table>
@@ -308,30 +405,37 @@
           </tr>
         </thead>
         <tbody>
-          <!-- TODO: 실제 수치로 교체하세요. 최고 성능은 class="best"로 표시 -->
+          <!-- TODO: 실제 수치로 교체하세요 -->
           <tr>
-            <td>Baseline A</td>
+            <td>NoMaD</td>
             <td>28.34</td>
             <td>0.912</td>
             <td>0.087</td>
             <td>12</td>
           </tr>
           <tr>
-            <td>Baseline B</td>
+            <td>NoMaD + CARE</td>
             <td>29.17</td>
             <td>0.923</td>
             <td>0.072</td>
             <td>8</td>
           </tr>
           <tr>
-            <td>Baseline C</td>
+            <td>ViNT</td>
+            <td>29.85</td>
+            <td>0.928</td>
+            <td>0.068</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>ViNT + CARE</td>
             <td>30.02</td>
             <td>0.931</td>
             <td>0.065</td>
-            <td>15</td>
+            <td>9</td>
           </tr>
           <tr class="highlight-row">
-            <td>Ours</td>
+            <td>SaferNav (Ours)</td>
             <td class="best">31.45</td>
             <td class="best">0.948</td>
             <td class="best">0.041</td>
